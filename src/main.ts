@@ -7,15 +7,17 @@ import { createMemoryHistory, createRouter } from "vue-router";
 
 import HomeView from "./views/HomeView.vue";
 import NameTheFlagView from "./views/NameTheFlagView.vue";
+import NameThePrideFlagView from "./views/NameThePrideFlagView.vue";
 
 const routes = [
-  { path: "/", component: () => NameTheFlagView },
-  { path: "/a", component: () => HomeView },
+    { path: "/", component: HomeView },
+    { path: "/flag", component: NameTheFlagView },
+    { path: "/pride", component: NameThePrideFlagView },
 ];
 
 const router = createRouter({
-  history: createMemoryHistory(),
-  routes,
+    history: createMemoryHistory(),
+    routes,
 });
 
 createApp(App).use(router).mount("#app");
